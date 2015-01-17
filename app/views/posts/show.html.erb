@@ -8,6 +8,10 @@
        <%= @post.user.name %>
      </small>
     <p><%= markdown @post.body %></p>
+      <div class="bg-warning col-md-2">
+       <%= image_tag(@post.image.thumb.url, :class => "img-rounded center-block") %>      
+   </div>
+
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
