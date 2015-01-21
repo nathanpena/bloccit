@@ -19,3 +19,9 @@
     <% end %>
   </div>
 </div>
+
+  <div class="row">
+    <h1>Comments</h1>    
+    <%= render partial: 'comments/comment', locals: { topic: @topic, post: @post } %>
+    <%= render partial: 'comments/form', locals: { topic: @topic, post: @post }%>
+  </div>
