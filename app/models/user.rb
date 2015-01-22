@@ -16,5 +16,8 @@ class User < ActiveRecord::Base
     role == 'moderator'
   end
 
+  def guest?
+    role == 'guest'
+  end
   
 end
