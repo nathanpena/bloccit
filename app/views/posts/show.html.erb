@@ -25,7 +25,7 @@
     
       <% @post.comments.all.each do |comment| %>
 
-      <p><%= comment.body %> <%= current_user.name %></p>
+      <p><%= comment.body %> <%= User.find(Post.find(@post).user_id).name %></p>
 
       <% end %>
 
