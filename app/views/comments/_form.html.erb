@@ -1,10 +1,10 @@
 <%= form_for [topic, post] do |f| %>
   
-  <%= form_group_tag(post.errors[:body]) do %>
+  
     <h3>Add a comment:</h3>
     <%= f.label :body %>
     <%= f.text_area :body, class: 'form-control'%>
-  <% end %>
+
 
   <div class="form-group">
     <%= f.submit "Create Comment", class: 'btn btn-success' %>
