@@ -5,7 +5,8 @@ require 'faker'
    user = User.new(
      name:     Faker::Name.name,
      email:    Faker::Internet.email,
-     password: Faker::Lorem.characters(10)
+     password: Faker::Lorem.characters(10),
+     avatar:   Faker::Avatar.image
    )
    user.skip_confirmation!
    user.save!
@@ -22,8 +23,8 @@ require 'faker'
  
  50.times do
    Post.create!(
-     user: users.sample,
-     topic: topics.sample,
+     user:   users.sample,
+     topic:  topics.sample,
      title:  Faker::Lorem.sentence,
      body:   Faker::Lorem.paragraph
    )
