@@ -22,7 +22,7 @@
         </div>
       </div>
     <% end %>
-    <%= will_paginate @posts %>
+    <%= will_paginate(@posts, :renderer => 'BootstrapPaginationHelper::LinkRenderer') %>
   </div>
   <div class="col-md-4">
     <% if policy(Post.new).create? %>

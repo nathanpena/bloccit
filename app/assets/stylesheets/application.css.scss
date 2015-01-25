@@ -7,3 +7,11 @@
  .nav {
    margin-top: 5px;
  }
+
+ .truncate {
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -moz-binding: url('assets/xml/ellipsis.xml#ellipsis');
+}

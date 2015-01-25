@@ -6,15 +6,16 @@
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
-            <%= link_to topic.name, topic %>
+            <%= link_to topic.name, topic %> 
+            <small>(<%= topic.posts.count %> posts)</small>
           </h4>
-          <small>
+          <small class="truncate">
             <%= topic.description %>
           </small>
         </div>
       </div>
     <% end %>
-      <%= will_paginate @topics %>
+      <%= will_paginate(@topics, :renderer => 'BootstrapPaginationHelper::LinkRenderer') %>
   </div>
   <div class="col-md-4">
     <% if policy(Topic.new).create? %>
