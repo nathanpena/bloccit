@@ -20,14 +20,10 @@
   </div>
 </div>
 
-  <div class="row">
-    <h1>Comments</h1>    
-    
-      <% @post.comments.all.each do |comment| %>
-
-      <p><%= comment.body %> <%= User.find(Post.find(@post).user_id).name %></p>
-
-      <% end %>
-
-    <%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
+<div class="row">
+  <h2>Comments</h2>
+  <div class='col-md-12'>
+    <%= render @comments %>
+    <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
   </div>
+</div>

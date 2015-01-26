@@ -1,12 +1,8 @@
-<%= form_for [topic, post] do |f| %>
-  
-  
-    <h3>Add a comment:</h3>
+<% if current_user %>
+  <h4>Add a comment:</h4>
+  <%= form_for [topic, post, comment] do |f| %>
     <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control'%>
-
-
-  <div class="form-group">
-    <%= f.submit "Create Comment", class: 'btn btn-success' %>
-  </div>
+    <%= f.text_field :body %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
