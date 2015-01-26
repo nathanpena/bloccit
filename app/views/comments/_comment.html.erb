@@ -1,10 +1,19 @@
-<p>
-  <%= comment.body %>
-  <% if comment.user %>
+<div class="media">
+  <div class="media-body"> 
+   <% if comment.user %>
     <small>
-      <em><%= comment.user.name || comment.user.email %></em>
+      <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
+      <% if policy(comment).destroy? %>
+        | <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
+      <% end %>
     </small>
-  <% end %>
-</p>
+   <% end %>  
+    <p><%= comment.body %></p>
+  </div>
+</div>
+
+
+
+
 
 
