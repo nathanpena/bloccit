@@ -18,12 +18,11 @@
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
     <% end %>
   </div>
-</div>
-
-<div class="row">
-  <h2>Comments</h2>
+  
   <div class='col-md-12'>
+    <h2>Comments</h2>
     <%= render @comments %>
     <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
   </div>
+
 </div>
