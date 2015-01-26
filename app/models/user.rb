@@ -14,10 +14,14 @@ class User < ActiveRecord::Base
 
   def moderator?
     role == 'moderator'
+<<<<<<< HEAD
   end
 
   def guest?
     role == 'guest'
   end
   
+=======
+  end  
+>>>>>>> destroy
 end

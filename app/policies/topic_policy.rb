@@ -4,11 +4,12 @@ class TopicPolicy < ApplicationPolicy
     true
   end
 
-     def create?
+  def create?
      user.present? && user.admin?
-   end
+  end
  
    def update?
      create?
    end
+
 end
