@@ -15,7 +15,7 @@
 
   def load_post_and_vote
     @post = Post.find(params[:post_id])
-    
+    binding.pry
     @vote = @post.votes.where(user_id: current_user.id).first
   end
 
