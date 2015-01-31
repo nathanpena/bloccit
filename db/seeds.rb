@@ -13,6 +13,7 @@ require 'faker'
  end
  users = User.all
 
+# Create Topics
   79.times do
    Topic.create!(
      name:         Faker::Lorem.sentence,
@@ -21,13 +22,16 @@ require 'faker'
  end
  topics = Topic.all
  
+ # Create Posts
  253.times do
-   Post.create!(
+      post = Post.create!(
      user:   users.sample,
      topic:  topics.sample,
      title:  Faker::Lorem.sentence,
      body:   Faker::Lorem.paragraph
    )
+      post.update_attributes!(created_at: rand(10.minutes..1.year).ago)
+      post.update_rank
  end
  posts = Post.all
  
