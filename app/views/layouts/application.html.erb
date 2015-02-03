@@ -27,6 +27,7 @@
         </ul>
 
        <% if flash[:notice] %>
+       
          <div class="alert alert-success">
            <button type="button" class="close" data-dismiss="alert">&times;</button>
            <%= flash[:notice] %>
@@ -41,7 +42,9 @@
            <button type="button" class="close" data-dismiss="alert">&times;</button>
            <%= flash[:alert] %>
          </div>
+         
        <% end %>
+      <div class="row top"></div>
 
         <%= yield %>
       </div>
