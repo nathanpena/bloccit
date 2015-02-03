@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.paginate(page: params[:page], per_page: 10).order(updated_at: :desc)
+    @topics = Topic.visible_to(current_user).paginate(page: params[:page], per_page: 10).order(updated_at: :desc)
     authorize @topics
   end
 
