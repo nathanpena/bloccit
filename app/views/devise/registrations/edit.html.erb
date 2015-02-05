@@ -1,5 +1,6 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= debug current_user %>
 <div class="row">
   <div class="col-md-8">
     <h3>Change email or password</h3>
@@ -52,6 +53,11 @@
          <%= f.hidden_field :avatar_cache %>
        </div>
 
+        <div class="form-group"
+          <%= f.label :email_favorites %>
+          <%= f.check_box :email_favorites %>
+          <p class ="help-block">Be notified for new comments on your favorites</p>
+        </div>
       
       <div class="form-group">
         <%= f.submit "Update", class: 'btn btn-success' %>
