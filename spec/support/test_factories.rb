@@ -17,4 +17,5 @@ def authenticated_user(options={})
   user.save
   user
 end
+
 end
