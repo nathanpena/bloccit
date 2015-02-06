@@ -5,11 +5,11 @@ class Comment < ActiveRecord::Base
   validates :body, length: { minimum: 5 }, presence: true
   validates :user, presence: true
 
-  after_save :send_favorites_emails
+  after_save :send_favorite_emails
 
   private
 
-  def send_favorites_emails
+  def send_favorite_emails
     post.favorites.each do |favorite|
       if should_receive_update_for?(favorite)
         FavoriteMailer.new_comment(favorite.user, post, self).deliver
