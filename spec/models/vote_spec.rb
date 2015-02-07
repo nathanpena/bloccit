@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Vote do 
-  include TestFactories
   describe "validations" do
 
     before do
@@ -21,7 +20,8 @@ describe Vote do
 
   describe 'after_save' do 
     it "calls 'Post#update_rank' after save" do
-      post = associated_post      
+      user = create(:user)
+      post = create(:post, user: user)     
       expect(post).to receive(:update_rank)
       vote = Vote.create(value: 1, post: post)
     end
