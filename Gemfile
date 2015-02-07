@@ -36,3 +36,5 @@ gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
 gem 'pry', :group => :development
 gem 'newrelic_rpm'
+gem 'unicorn'
+gem 'rack-timeout'
